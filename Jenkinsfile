@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker build -t shaikmustafa/service:v1 .'
+                sh 'docker build -t badekeerthi/my-image:new-tag .'
             }
         }
         stage('Push'){
             steps{
                 script{
                     withDockerRegistry(credentialsId: 'docker-id') {
-                        sh 'docker push shaikmustafa/service:v1'
+                        sh 'docker push badekeerthi/my-image:new-tag'
                     }
                 }
             }
